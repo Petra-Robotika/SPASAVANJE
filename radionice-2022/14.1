@@ -1,0 +1,33 @@
+#pragma once
+ #include "helper.h"
+
+
+void RobotLine::radionica()
+{
+ armOpen();
+if (front() < 120) {
+    go(-90, 90);
+  delayMs(500);}
+
+if (frontLeft() < 200) {
+  go(-70, 70);
+  delayMs(500);
+  go(20, 20);
+  delayMs(2000); 
+  armCatch();
+  delayMs(500);
+  stop();
+  delayMs(500);
+  end();
+  delayMs(500);
+
+  }
+  
+  if (rightFront() > 120)
+     go(80, 20);
+   else
+    go(20, 80);
+
+   
+
+}
