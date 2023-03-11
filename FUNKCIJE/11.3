@@ -1,0 +1,13 @@
+void RobotLine::radionica()
+{
+  static int broj = 0;
+  char simbol[10 + sizeof(char)];
+pracenjeLinije();
+  if (line(0) && line(8) && broj==0) {
+    go(-90, 90);
+    delayMs(500);
+    broj++;
+  }
+ sprintf(simbol, "%d", broj);
+ display(simbol);
+}
