@@ -1,0 +1,62 @@
+
+void RobotLine::wallFollowRight() {
+     armOpen();
+    if (rightFront() > 120)
+       go(90, 10);
+     else
+      go(10, 90);
+
+  }
+
+void RobotLine::wallFollowLeft(){
+     armOpen();
+    if (leftFront() > 120)
+     go(10, 90);
+   else
+    go(90, 10);
+}
+void RobotLine::raskrizje(){
+   if (line(0) && line(8)) {
+    go((-90), 90);
+
+  }
+
+}
+
+void RobotLine::pracenjeLinije(){
+   if (line(8))
+     go(-90, 90);
+   else if (line(0))
+    go(90, -90);
+   else if (line(7))
+    go(0, 100);
+   else if (line(1))
+    go(100, 0);
+   else if (line(6))
+    go(30, 80);
+   else if (line(2))
+    go(80, 30);
+   else if (line(5))
+    go(40, 70);
+   else if (line(3))
+    go(70, 40);
+   else if (line(4))
+    go(40, 40);
+   else
+    go(50, 50);
+}
+void RobotLine::AaBbCc()
+{
+  wallFollowLeft();
+  if (frontRight() < 200) {
+    go(90, -90);
+    delayMs(200);
+    armOpen();
+    go(40, 40);
+    delayMs(1500);
+   armClose();
+   stop();
+   end();
+  }
+
+}
